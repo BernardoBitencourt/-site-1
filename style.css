@@ -1,0 +1,463 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0d0d0e, #0000f1);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*menu*/
+
+.menu-jogo {
+height: 80px;
+width: 100%;
+padding: 10px 30px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: #111827;
+border-bottom: 3px solid #ff0000;
+box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+/* logo */
+
+.logo {
+display: flex;
+flex-direction: column;
+line-height: 1;
+}
+
+.logo span {
+color: white;
+font-size: 1rem;
+font-weight: bold;
+letter-spacing: 3px;
+}
+
+.logo strong {
+color: #ff0000;
+font-size: 1.5rem;
+letter-spacing: 1px;
+text-shadow: 2px 2px 8px black;
+}
+
+/* botão */
+
+.botao-menu {
+width: 55px;
+height: 55px;
+border: 2px solid #ff0000;
+border-radius: 10px;
+background: #2563eb;
+color: white;
+font-size: 28px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.botao-menu:hover {
+background: #ff0000;
+color: #111827;
+transform: scale(1.08);
+box-shadow: 0 0 15px #ff0000(250, 204, 21, 0.7);
+}
+
+/*menu*/
+
+.menu-lateral {
+position: fixed;
+top: 0;
+right: -320px;
+width: 300px;
+height: 100vh;
+padding: 30px 25px;
+background: #111827;
+border-left: 3px solid #f80101;
+box-shadow: -5px 0 25px rgba(0, 0, 0, 0.6);
+z-index: 2000;
+transition: right 0.4s ease;
+display: flex;
+flex-direction: column;
+}
+
+
+.menu-lateral.aberto {
+right: 0;
+}
+
+/* titulo */
+
+.menu-lateral h2 {
+color: #f80101;
+text-align: center;
+margin: 20px 0 30px;
+font-size: 2rem;
+text-shadow: 2px 2px 8px black;
+}
+
+/* links */
+
+.menu-lateral a {
+color: white;
+text-decoration: none;
+padding: 15px;
+margin-bottom: 8px;
+border-radius: 8px;
+font-weight: bold;
+font-size: 1.05rem;
+transition: 0.3s;
+}
+
+
+.menu-lateral a:hover {
+background: #2563eb;
+color: #ff0000;
+padding-left: 25px;
+transform: translateX(-5px);
+}
+
+/* linha */
+
+.menu-lateral hr {
+width: 100%;
+border: none;
+border-top: 1px solid #374151;
+margin: 15px 0;
+}
+
+/* botão fecha */
+
+.fechar-menu {
+align-self: flex-end;
+width: 40px;
+height: 40px;
+border: none;
+border-radius: 8px;
+background: transparent;
+color: white;
+font-size: 32px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.fechar-menu:hover {
+background: #dc2626;
+transform: rotate(90deg);
+}
+
+/* cadrastro */
+
+.menu-cadastro {
+border: 1px solid #facc15;
+color: #facc15 !important;
+}
+
+
+.menu-login {
+border: 1px solid #2563eb;
+}
+
+
+.fundo-menu {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+background: rgba(0, 0, 0, 0.6);
+opacity: 0;
+visibility: hidden;
+z-index: 1500;
+transition: 0.3s;
+}
+
+
+/*botão cadrastro*/
+#Cadastro {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 25px;
+    border: 2px solid #facc15;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    box-shadow: 0 0 10px rgba(37, 99, 235, .5);
+    transition: all .3s ease;
+}
+
+#Cadastro:hover {
+    background: linear-gradient(135deg, #facc15, #eab308);
+    color: #111827;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(250, 204, 21, .8);
+}
+
+#Cadastro:active {
+    transform: scale(0.96);
+}
+
+/*conteodu*/
+#resumo,
+.personagem,
+#cadastro,
+#Destalhes,
+#Gameplay {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#resumo {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+#resumo h2 {
+    color: #facc15;
+    margin-bottom: 15px;
+}
+
+#resumo p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/*personagens*/
+.personagem {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.personagem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(238, 5, 5, 0.6);
+}
+
+.personagem h2 {
+    color: #facc15;
+    margin-bottom: 20px;
+}
+
+.personagem img {
+    width: 280px;
+    max-width: 100%;
+    border-radius: 12px;
+    border: 3px solid #f50404;
+    margin-bottom: 20px;
+}
+
+.personagem p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/*cadrastro e login*/
+#cadastro {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+#cadastro h2 {
+    text-align: center;
+    color: #f10e0e;
+    margin-bottom: 20px;
+}
+
+
+#cadastro input,
+#cadastro select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+#cadastro input[type="submit"] {
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#cadastro input:hover {
+    background: #facc15;
+    color: black;
+}
+
+/*pagina sobre*/
+#Destalhes,
+#Gameplay {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 25px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    color: #facc15;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+p {
+    line-height: 1.7;
+}
+
+n {
+    color: #60a5fa;
+    font-weight: bold;
+}
+
+
+footer {
+    background-color: black;
+    text-align: center;
+    padding: 30px;
+    margin-top: auto;
+}
+
+/*loja*/
+
+.loja {
+width: 90%;
+max-width: 1200px;
+margin: 40px auto;
+}
+
+.loja > h1 {
+text-align: center;
+color: #ef4444;
+font-size: 2.5rem;
+margin-bottom: 10px;
+text-shadow: 2px 2px 8px black;
+}
+
+.descricao-loja {
+text-align: center;
+margin-bottom: 35px;
+color: #ddd;
+}
+
+/*produto*/
+
+.produtos {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 25px;
+
+}
+
+/*card do produto*/
+
+.produto {
+background: #111827;
+border: 2px solid #374151;
+border-radius: 15px;
+padding: 20px;
+text-align: center;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+transition: 0.3s;
+}
+
+.produto:hover {
+transform: translateY(-8px);
+border-color: #ef4444;
+box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+/* foto do produto*/
+
+.foto-produto {
+width: 100%;
+height: 220px;
+display: flex;
+align-items: center;
+justify-content: center;
+background: #1f2937;
+border-radius: 10px;
+margin-bottom: 20px;
+overflow: hidden;
+}
+
+.foto-produto img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: 0.3s;
+}
+
+.produto:hover .foto-produto img {
+transform: scale(1.05);
+}
+
+/*informação*/
+
+.produto h2 {
+color: white;
+font-size: 1.3rem;
+margin-bottom: 10px;
+}
+
+.produto p {
+color: #bbb;
+font-size: 0.95rem;
+min-height: 45px;
+margin-bottom: 15px;
+}
+
+/*preço*/
+
+.preco {
+display: block;
+color: #ef4444;
+font-size: 1.4rem;
+font-weight: bold;
+margin-bottom: 15px;
+}
+
+/*botão de compra*/
+.btn-comprar {
+width: 100%;
+padding: 12px;
+border: none;
+border-radius: 8px;
+background: #2563eb;
+color: white;
+font-size: 1rem;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.btn-comprar:hover {
+background: #ef4444;
+transform: scale(1.03);
+box-shadow: 0 0 15px rgba(239, 68, 68, 0.6)
+}
